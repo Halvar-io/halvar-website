@@ -1,0 +1,15 @@
+{
+    "name": "acf/offerssmall",
+    "title": "Offers small",
+    "description": "A custom testimonial block.",
+    "style": [ ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["testimonial", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "offers_small.php"
+    },
+    "align": "full"
+}
+

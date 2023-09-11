@@ -1,0 +1,15 @@
+{
+    "name": "acf/chat",
+    "title": "Chat",
+    "description": "A custom testimonial block.",
+    "style": [  ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["testimonial", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "chat.php"
+    },
+    "align": "full"
+}
+

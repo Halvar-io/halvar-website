@@ -1,0 +1,15 @@
+{
+    "name": "acf/slogantyper",
+    "title": "Slogan Typer",
+    "description": "A custom testimonial block.",
+    "style": [ ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["testimonial", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "slogantyper.php"
+    },
+    "align": "full"
+}
+
