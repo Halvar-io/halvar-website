@@ -48,6 +48,7 @@ if( have_rows( 'supports' ) ) {
     $i = 1;
     while( have_rows( 'supports' ) ) {
         the_row();
+        if( $i == 3 ) { $i = 1; }
 ?>
 
 				<div
