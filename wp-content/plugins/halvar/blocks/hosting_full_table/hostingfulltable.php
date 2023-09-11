@@ -169,7 +169,7 @@ if( !$is_reseller ) {
 				<p>30-Day Money-Back Guarantee</p>
 				
 				<p>
-					<span style="font-weight: 700;">Developer </span>friendly composer, git, ssh, rsync, wp-cli, ..
+					<span style="font-weight: 700;">Developer </span>friendly composer, git, ssh, rsync, cron, wp-cli, ..
 				</p>				
 
 			</div>
