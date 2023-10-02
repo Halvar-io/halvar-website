@@ -14,8 +14,17 @@ function halvar_register_acf_blocks() {
     }
 }
 
-
 add_action( 'init', 'halvar_register_acf_blocks' );
+
+
+add_filter( 'body_class', 'halvar_body_class' );
+function halvar_body_class( $classes ) {
+	$t = get_field( 'body_classes' );
+	if( !$t ) { return $classes; }
+	
+	return array_merge( $classes, explode( ', ', $t ) );
+}
+
 
 /**
  * Register a custom post type called "book".
@@ -76,7 +85,7 @@ add_action( 'init', 'wpdocs_codex_book_init' );
 // Add shortcode to display team members
 function team_members_shortcode() {
     // Get the repeater field values
-    $team_members = get_field('team_members');
+    $team_members = get_field( 'team_members' );
     
     // Initialize output variable
     $output = '';
