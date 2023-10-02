@@ -98,7 +98,7 @@ if (! empty($block['align'])) {
 
 
 		<p class="has-normal-font-size" style="line-height: 1.5">
-			<strong>€ 8.50 /mo</strong>
+			<strong>€ 9.50 /mo</strong>
 		</p>
 
 
