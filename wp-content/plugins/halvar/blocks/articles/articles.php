@@ -42,7 +42,7 @@ $our_query = new WP_Query( [ 'post_type' => 'post', 'posts_per_page' => 3 ]);
 		class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
 		<figure class="wp-block-image size-full">
 			<img decoding="async" fetchpriority="high" width="520" height="272"
-				src="<?php echo get_the_post_thumbnail_url( $post ); ?>"
+				src="<?php echo str_replace ('.png', '.webp', get_the_post_thumbnail_url( $post ) ); ?>"
 				alt="Non described image for <?php echo get_the_title( $post ); ?>" class="wp-image-353"
 				loading="lazy"
 				srcset=""

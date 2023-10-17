@@ -38,7 +38,7 @@ if (! empty($block['align'])) {
 
 <div class="wp-block-columns excellent-support-sec-suppot-1 is-layout-flex wp-container-43 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%">
-<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="108" height="108" src="https://halvarbouwio-w113c2.preview.wpmanaged.nl/wp-content/uploads/2023/07/Group-40.png" alt="" class="wp-image-392"></figure>
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="108" height="108" src="https://www.halvar.io/wp-content/uploads/2023/07/Group-40.png" alt="" class="wp-image-392"></figure>
 </div>
 
 
@@ -56,7 +56,7 @@ if (! empty($block['align'])) {
 
 <div class="wp-block-columns excellent-support-sec-suppot-2 is-layout-flex wp-container-46 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%">
-<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="108" height="108" src="https://halvarbouwio-w113c2.preview.wpmanaged.nl/wp-content/uploads/2023/07/Group-40.png" alt="" class="wp-image-392"></figure>
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="108" height="108" src="https://www.halvar.io/wp-content/uploads/2023/07/Group-40.png" alt="" class="wp-image-392"></figure>
 </div>
 
 
@@ -74,7 +74,7 @@ if (! empty($block['align'])) {
 
 <div class="wp-block-columns excellent-support-sec-suppot-3 is-layout-flex wp-container-49 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%">
-<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="108" height="108" src="https://halvarbouwio-w113c2.preview.wpmanaged.nl/wp-content/uploads/2023/07/Group-40.png" alt="" class="wp-image-392"></figure>
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="108" height="108" src="https://www.halvar.io/wp-content/uploads/2023/07/Group-40.png" alt="" class="wp-image-392"></figure>
 </div>
 
 
@@ -89,5 +89,5 @@ if (! empty($block['align'])) {
 </div>
 
 
-<a class="excellent-support-sec-btn wp-block-read-more" href="https://halvarbouwio-w113c2.preview.wpmanaged.nl/" target="_self">get started<span class="screen-reader-text">: Home</span></a></div>
+<a class="excellent-support-sec-btn wp-block-read-more" href="https://www.halvar.io/" target="_self">get started<span class="screen-reader-text">: Home</span></a></div>
 </div>

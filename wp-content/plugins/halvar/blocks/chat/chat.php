@@ -36,7 +36,7 @@ if( get_field( 'site_chat', 'option' ) == 'no' ) return;
 		<figure class="wp-block-image alignright size-full">
 			<img decoding="async" loading="lazy" width="137" height="141"
 				loading="lazy"
-				src="https://halvarbouwio-w113c2.preview.wpmanaged.nl/wp-content/uploads/2023/07/Group-105-2.png"
+				src="https://www.halvar.io/wp-content/uploads/2023/07/Group-105-2.png"
 				alt="Chat icon" class="wp-image-1572">
 		</figure>
 	</div>

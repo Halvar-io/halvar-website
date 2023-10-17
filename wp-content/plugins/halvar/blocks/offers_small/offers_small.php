@@ -29,6 +29,21 @@ if (! empty($block['align'])) {
 <div
 	class="wp-block-columns alignwide home-packages is-layout-flex wp-container-7 wp-block-columns-is-layout-flex <?php echo $class_name; ?>"
 	style="margin-bottom: 0">
+	
+	
+<?php 
+$t = get_field( 'hostings' );
+$f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+
+$i = 1;
+foreach( $t as $item ) {
+    $is_reseller = substr_count( $item->post_title , 'eller' ) === 1;
+}
+?>
+	
+	
+	
+	
 	<div
 		class="wp-block-column home-package-1 has-text-color has-background has-link-color wp-elements-92b33dbf4cd2c29a5249e63edb71aa40 is-layout-flow wp-block-column-is-layout-flow"
 		style="color: #000000; background-color: #ffe97d; padding-top: 2em; padding-right: 2em; padding-bottom: 2em; padding-left: 2em">
@@ -76,10 +91,10 @@ if (! empty($block['align'])) {
 		</div>
 	</div>
 
-
+<?php $i++; ?>
 
 	<div
-		class="wp-block-column home-package-2 has-text-color has-background has-link-color wp-elements-a7594a88ecc4db59c3e2ccfba15a885f is-layout-flow wp-block-column-is-layout-flow"
+		class="wp-block-column home-package-<?php echo $i; ?> has-text-color has-background has-link-color wp-elements-a7594a88ecc4db59c3e2ccfba15a885f is-layout-flow wp-block-column-is-layout-flow"
 		style="color: #000000; background-color: #ffe97d; padding-top: 2em; padding-right: 2em; padding-bottom: 2em; padding-left: 2em">
 		<h2 class="wp-block-heading" style="font-size: 40px">
 			<strong>Shared - Gard</strong>
@@ -125,10 +140,10 @@ if (! empty($block['align'])) {
 		</div>
 	</div>
 
-
+<?php $i++; ?>
 
 	<div
-		class="wp-block-column home-package-3 has-text-color has-background has-link-color wp-elements-27b262b42fa8cb69532bbefcbe71b583 is-layout-flow wp-block-column-is-layout-flow"
+		class="wp-block-column home-package-<?php echo $i; ?> has-text-color has-background has-link-color wp-elements-27b262b42fa8cb69532bbefcbe71b583 is-layout-flow wp-block-column-is-layout-flow"
 		style="color: #000000; background-color: #ffe97d; padding-top: 2em; padding-right: 2em; padding-bottom: 2em; padding-left: 2em">
 		<h2 class="wp-block-heading" style="font-size: 40px">
 			<strong>Shared - Slottet</strong>
@@ -173,6 +188,10 @@ if (! empty($block['align'])) {
 			</div>
 		</div>
 	</div>
+	
+	
+	
+	
 </div>
 <div
 	class="wp-block-columns alignfull show-all-offers is-layout-flex wp-container-10 wp-block-columns-is-layout-flex">
@@ -182,7 +201,7 @@ if (! empty($block['align'])) {
 		<div
 			class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
 			<div class="wp-block-button is-style-outline">
-				<a class="wp-block-button__link wp-element-button" <?php echo home_url('/hosting'); ?>>show all offers</a>
+				<a class="wp-block-button__link wp-element-button" href="<?php echo home_url('/hosting'); ?>">show all offers</a>
 			</div>
 		</div>
 	</div>

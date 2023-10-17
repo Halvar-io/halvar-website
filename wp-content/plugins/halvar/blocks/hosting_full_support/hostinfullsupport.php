@@ -59,7 +59,7 @@ if( have_rows( 'supports' ) ) {
 						<figure class="wp-block-image size-full">
 							<img decoding="async" width="108" height="108"
 								loading="lazy"
-								src="https://halvarbouwio-w113c2.preview.wpmanaged.nl/wp-content/uploads/2023/07/Group-40.png"
+								src="https://www.halvar.io/wp-content/uploads/2023/07/Group-40.png"
 								alt="Computer icon" class="wp-image-392">
 						</figure>
 					</div>

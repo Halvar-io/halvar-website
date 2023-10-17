@@ -33,7 +33,7 @@ if (! empty($block['align'])) {
 		<figure class="wp-block-image size-full">
 			<img decoding="async" width="194" height="33"
 				loading="lazy"
-				src="https://halvarbouwio-w113c2.preview.wpmanaged.nl/wp-content/uploads/2023/07/group-30.png"
+				src="https://www.halvar.io/wp-content/uploads/2023/07/group-30.png"
 				alt="4-stars" class="wp-image-342">
 		</figure>
 
@@ -55,7 +55,7 @@ if (! empty($block['align'])) {
 		<figure class="wp-block-image size-full">
 			<img decoding="async" width="194" height="33"
 				loading="lazy"
-				src="https://halvarbouwio-w113c2.preview.wpmanaged.nl/wp-content/uploads/2023/07/group-30.png"
+				src="https://www.halvar.io/wp-content/uploads/2023/07/group-30.png"
 				alt="4-stars" class="wp-image-342">
 		</figure>
 
