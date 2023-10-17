@@ -25,6 +25,13 @@ function halvar_body_class( $classes ) {
 	return array_merge( $classes, explode( ', ', $t ) );
 }
 
+function mp_enqueues() {
+	wp_enqueue_script( 'jquery' );
+
+}
+add_action( 'wp_enqueue_scripts', 'mp_enqueues' ) ;
+
+
 
 /**
  * Register a custom post type called "book".
