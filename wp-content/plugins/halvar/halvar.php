@@ -4,7 +4,7 @@ Plugin Name: Halvar
 Plugin URI: 
 Description: 
 Author: 
-Version: 0.0.1
+Version: 0.0.2
 Author URI: 
 Update URI: false
 */
@@ -158,8 +158,31 @@ g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 })();
 </script>
 <!-- End Matomo Code -->
+
+
 <?php
-}
+	if( get_field( 'site_chat', 'option' ) == 'no' ) {
+	// void
+	} else {
+?>
+	<script type="text/javascript">
+	<!--
+	  var Chatstack = { server: 'customerportal.halvar.io/whmcs/modules/' };
+	  (function(d, undefined) {
+	    // JavaScript
+	    Chatstack.e = []; Chatstack.ready = function (c) { Chatstack.e.push(c); }
+	    var b = d.createElement('script'); b.type = 'text/javascript'; b.async = true;
+	    b.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + Chatstack.server + '/livehelp/scripts/js.min.js';
+	    var s = d.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(b, s);
+	  })(document);
+	-->
+	</script>
+<?php
+	}
+	
+
+} // PHP function
 add_action( 'wp_footer', 'halvar_footer' );
 
 

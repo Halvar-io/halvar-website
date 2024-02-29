@@ -25,19 +25,34 @@ if (! empty($block['align'])) {
     $class_name .= ' align' . $block['align'];
 }
 
-if( get_field( 'site_chat', 'option' ) == 'no' ) return;
+if( get_field( 'site_chat', 'option' ) == 'no' ) {
+?>
+<script type="text/javascript">
+jQuery('li.LiveHelpButton').hide();
+</script>
+<?php
+	return;
+}
+
+
+// Dev note: Chat is enabled below this line
 
 ?>
+
+
+
 
 <div
 	class="wp-block-columns chat-icon-col is-layout-flex wp-container-69 wp-block-columns-is-layout-flex">
 	<div
 		class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
 		<figure class="wp-block-image alignright size-full">
+		<a href="#" class="LiveHelpButton default">
 			<img decoding="async" loading="lazy" width="137" height="141"
 				loading="lazy"
 				src="https://www.halvar.io/wp-content/uploads/2023/07/Group-105-2.png"
 				alt="Chat icon" class="wp-image-1572">
+			</a>
 		</figure>
 	</div>
 </div>
