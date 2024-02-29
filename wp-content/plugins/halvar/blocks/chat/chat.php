@@ -47,11 +47,11 @@ jQuery('li.LiveHelpButton').hide();
 	<div
 		class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
 		<figure class="wp-block-image alignright size-full">
-		<a href="#" class="LiveHelpButton default">
-			<img decoding="async" loading="lazy" width="137" height="141"
-				loading="lazy"
-				src="https://www.halvar.io/wp-content/uploads/2023/07/Group-105-2.png"
-				alt="Chat icon" class="wp-image-1572">
+			<a href="#" class="LiveHelpButton default">
+				<img decoding="async" loading="lazy" width="137" height="141"
+					loading="lazy"
+					src="https://www.halvar.io/wp-content/uploads/2023/07/Group-105-2.png"
+					alt="Chat icon" class="wp-image-1572">
 			</a>
 		</figure>
 	</div>
