@@ -37,6 +37,7 @@ $f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 
 foreach( $t as $item ) {
     $is_reseller = substr_count( $item->post_title , 'eller' ) === 1;
+    $is_server = substr_count( $item->post_title , 'erver' ) === 1;
 ?>
 
 	<div
@@ -49,7 +50,13 @@ foreach( $t as $item ) {
 		<p><?php echo get_the_excerpt( $item ); ?></p>
 
 		<p class="has-normal-font-size" style="line-height: 1.5">
-			<strong>Special price the first year</strong>
+			<?php 
+			if( $is_server ) {
+                echo '<strong>NVME</strong> mirrored disks, localstorage<br/>High frequency CPU cores';
+			} else {
+                echo '<strong>Special price the first year</strong>';
+			}
+			?>
 		</p>
 
 		<p class="has-normal-font-size" style="line-height: 1.5">
@@ -68,7 +75,6 @@ foreach( $t as $item ) {
 			</div>
 
 
-
 			<div
 				class="wp-block-button has-custom-width wp-block-button__width-100">
 				<a
@@ -76,7 +82,6 @@ foreach( $t as $item ) {
 					style="background-color: #000000" href="<?php echo get_field( 'link_order', $item ); ?>">get started</a>
 			</div>
 		</div>
-
 
 
 		<div
@@ -114,12 +119,18 @@ foreach( $t as $item ) {
 					<span style="font-weight: 700;">Free TLS </span> Certificate
 				</p>
 
+<?php 
+if( !$is_server ) {
+
+?>
 				<p>
 					<span style="font-weight: 700;">Standard price <small>&euro; <?php echo get_field( 'price', $item ); ?> /mo</small>
 				</p>
 
 <?php 
-if( !$is_reseller ) {
+}
+
+if( !$is_reseller && !$is_server ) {
 ?>		
 				<p>
 					<span style="font-weight: 700;">Free</span> Domain for the 1st Year
@@ -128,22 +139,39 @@ if( !$is_reseller ) {
 }
 ?>
 
+<?php 
+if( !$is_server ) {
+
+?>	
 				<p>
 					<span style="font-weight: 700;">Secure</span> cloudlinux hosting
 				</p>
+<?php 
+}
+?>
 
 				<p>
 					<span style="font-weight: 700;">Free</span> Nightly Backups
 				</p>
 				
+<?php 
+if( !$is_server ) {
+
+?>				
 				<p>
 					<span style="font-weight: 700;">Free </span> WP toolkit
 				</p>
-				
+<?php 
+}
+?>				
 				<p>
 					<span style="font-weight: 700;">GDPR safe</span> All data is stored and owned by EU companies
 				</p>				
 				
+<?php 
+if( !$is_server ) {
+
+?>					
 				<p>
 					<span style="font-weight: 700;">AccelerateWP </span> included
 				</p>				
@@ -152,11 +180,18 @@ if( !$is_reseller ) {
 				$n = get_field( 'sites', $item );
 				echo ucfirst( $f->format( $n*2 ) ); ?> databases</p>
 
+<?php 
+}
+?>
 
 				<p>200% Green Energy Match</p>
 				
 				<p><strong>PHP 8.0</strong> and up with easy PHP selector</p>		
 				
+<?php 
+if( !$is_server ) {
+
+?>					
 				<p>
 					<strong>Superfast Litespeed</strong> hosting
 				</p>
@@ -164,12 +199,15 @@ if( !$is_reseller ) {
 				<p>
 					<span style="font-weight: 700;">X-ray</span> PHP tracer
 				</p>				
+<?php 
+}
+?>
 
 
 				<p>30-Day Money-Back Guarantee</p>
 				
 				<p>
-					<span style="font-weight: 700;">Developer </span>friendly composer, git, ssh, rsync, cron, wp-cli, ..
+					<span style="font-weight: 700;">Developer friendly</span> composer, git, ssh, rsync, cron, <?php if( !$is_server ) { ?>wp-cli, <?php } ?>..
 				</p>				
 
 			</div>
