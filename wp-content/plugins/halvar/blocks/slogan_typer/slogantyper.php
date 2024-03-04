@@ -42,6 +42,7 @@ if( have_rows( 'slogans' ) ) {
     }
 }
 
+shuffle( $slogans );
 $slogans = '"'.implode( '", "', $slogans ).'"';
 
 ?>
