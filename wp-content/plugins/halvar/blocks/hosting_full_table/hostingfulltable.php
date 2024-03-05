@@ -92,7 +92,12 @@ foreach( $t as $item ) {
 				<p>
 					<span style="font-weight: 700;"><?php 
 					$n = get_field( 'sites', $item );
-					echo ucfirst( $f->format( $n ) ); ?></span> Website<?php if( $n > 1 ) { echo 's'; } ?>
+					echo ucfirst( $f->format( $n ) ); ?></span> Website<?php if( $n > 1 ) { echo 's'; } 
+					if( $is_server ) {
+						echo ' &amp; one staging website';
+					}
+					
+					?>
 				</p>
 
 
@@ -207,7 +212,7 @@ if( !$is_server ) {
 				<p>30-Day Money-Back Guarantee</p>
 				
 				<p>
-					<span style="font-weight: 700;">Developer friendly</span> composer, git, ssh, rsync, cron, <?php if( !$is_server ) { ?>wp-cli, <?php } ?>..
+					<span style="font-weight: 700;">Developer friendly</span> composer, git, ssh, rsync, cron, wp-cli, ..
 				</p>				
 
 			</div>
