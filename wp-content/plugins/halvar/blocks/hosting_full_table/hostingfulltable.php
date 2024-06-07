@@ -94,7 +94,8 @@ foreach( $t as $item ) {
 					$n = get_field( 'sites', $item );
 					echo ucfirst( $f->format( $n ) ); ?></span> Website<?php if( $n > 1 ) { echo 's'; } 
 					if( $is_server ) {
-						echo ' &amp; one staging website';
+						echo ' &amp; '.ucfirst( $f->format( $n ) ).' staging website';
+						if( $n > 1 ) { echo 's'; }
 					}
 					
 					?>
