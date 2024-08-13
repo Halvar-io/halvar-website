@@ -161,25 +161,11 @@ g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 
 
 <?php
-	if( get_field( 'site_chat', 'option' ) == 'no' ) {
-	// void
-	} else {
+if( get_field( 'site_chat', 'option' ) == 'yes' ) {
 ?>
-	<script type="text/javascript">
-	<!--
-	  var Chatstack = { server: 'customerportal.halvar.io/whmcs/modules/' };
-	  (function(d, undefined) {
-	    // JavaScript
-	    Chatstack.e = []; Chatstack.ready = function (c) { Chatstack.e.push(c); }
-	    var b = d.createElement('script'); b.type = 'text/javascript'; b.async = true;
-	    b.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + Chatstack.server + '/livehelp/scripts/js.min.js';
-	    var s = d.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(b, s);
-	  })(document);
-	-->
-	</script>
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="376c56a7-53fd-4fe5-b9df-0bc489fb6dbc";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 <?php
-	}
+}
 	
 
 } // PHP function
