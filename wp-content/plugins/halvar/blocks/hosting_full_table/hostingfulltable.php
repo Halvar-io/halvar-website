@@ -31,13 +31,40 @@ if (! empty($block['align'])) {
 	style="margin-bottom: 0">
 
 <?php 
+
+$discount_percentage = get_field( 'percentage_discount' );
+$override_discountcode = get_field( 'override_discountcode' );
 $t = get_field( 'hostings' );
 $f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 
 
 foreach( $t as $item ) {
-    $is_reseller = substr_count( $item->post_title , 'eller' ) === 1;
-    $is_server = substr_count( $item->post_title , 'erver' ) === 1;
+	$is_reseller = substr_count( $item->post_title , 'eller' ) === 1;
+	$is_server = substr_count( $item->post_title , 'erver' ) === 1;
+    
+	$link_order = get_field( 'link_order', $item );
+	$price_discount = get_field( 'price_discount', $item );
+	$price = get_field( 'price', $item );
+    
+    	// 2.5 => 2.50
+	if( intval( $discount_percentage ) > 0 ) {
+		$price_discount = $price -  ( ($price/100) * $discount_percentage );
+		if( substr_count( $price_discount, '.' ) == 1 ) {
+			$t_price = explode( '.', $price_discount );
+			if( strlen( $t_price[1] ) == 1 ) {
+				$price_discount .= '0';
+			}
+		}
+	}
+	
+	if( $override_discountcode ) {
+		if( substr_count( $link_order, 'promocode' ) == 0 ) {
+			$link_order .= '&promocode='.esc_attr( $override_discountcode );
+		} else {
+			$link_order = preg_replace("#&promocode=.+#", '&promocode='.esc_attr( $override_discountcode ), $link_order );
+		}
+	}
+    
 ?>
 
 	<div
@@ -60,7 +87,7 @@ foreach( $t as $item ) {
 		</p>
 
 		<p class="has-normal-font-size" style="line-height: 1.5">
-			<strong>&euro; <?php echo get_field( 'price_discount', $item ); ?> /mo</strong>
+			<strong>&euro; <?php echo $price_discount; ?> /mo</strong>
 		</p>
 
 
@@ -79,7 +106,7 @@ foreach( $t as $item ) {
 				class="wp-block-button has-custom-width wp-block-button__width-100">
 				<a
 					class="wp-block-button__link has-white-color has-text-color has-background no-border-radius wp-element-button"
-					style="background-color: #000000" href="<?php echo get_field( 'link_order', $item ); ?>">get started</a>
+					style="background-color: #000000" href="<?php echo $link_order; ?>">get started</a>
 			</div>
 		</div>
 
@@ -130,7 +157,7 @@ if( !$is_server ) {
 
 ?>
 				<p>
-					<span style="font-weight: 700;">Standard price <small>&euro; <?php echo get_field( 'price', $item ); ?> /mo</small>
+					<span style="font-weight: 700;">Standard price <small>&euro; <?php echo $price; ?> /mo</small>
 				</p>
 
 <?php 
