@@ -105,10 +105,11 @@ function team_members_shortcode() {
             $member_image = $team_member['member_image'];
             $member_name = $team_member['member_name'];
             $member_designation = $team_member['member_designation'];
+            $member_telephone = $team_member['member_telephone'];            
             $linked_profile_url = $team_member['linked_profile_url'];
             
             // Build the HTML output for each team member
-            $output .= '<div class="team-member">';
+            $output .= '<div class="team-member" id="meet-the-crew-'.sanitize_title( $member_name ).'">';
             $output .= '<div class="team-member-img">';
             $output .= '<img src="' . $member_image . '" alt="' . $member_name . '" class="team-member-image">';
             $output .= '</div>';
@@ -116,9 +117,10 @@ function team_members_shortcode() {
             $output .= '<div class="team-member-name-designtion">';
             $output .= '<h3 class="team-member-name">' . $member_name . '</h3>';
             $output .= '<h3 class="team-member-designation">' . $member_designation . '</h3>';
+            $output .= '<div class="team-member-designation" style="margin-top:-18px !important">' . $member_telephone . '</div>';
             $output .= '</div>';
             $output .= '<div class="team-member-profile">';
-            $output .= '<a href="' . $linked_profile_url . '" class="team-member-link"><img class="linkedin-logo" src="/wp-content/uploads/2023/07/group-86.png" alt="linkedin-profile"></a>';
+            $output .= '<a href="' . $linked_profile_url . '" class="team-member-link"><img class="linkedin-logo" src="/wp-content/uploads/2023/07/group-86.png" alt="linkedin-profile"></a>';            
             $output .= '</div>';
             $output .= '</div>';
             $output .= '</div>';
