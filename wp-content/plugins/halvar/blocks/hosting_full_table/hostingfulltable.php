@@ -119,9 +119,9 @@ foreach( $t as $item ) {
 				<p>
 					<span style="font-weight: 700;"><?php 
 					$n = get_field( 'sites', $item );
-					echo ucfirst( $f->format( $n ) ); ?></span> Website<?php if( $n > 1 ) { echo 's'; } 
+					echo ucfirst( $f->format( $n ) ); ?></span> account<?php if( $n > 1 ) { echo 's'; } 
 					if( $is_server ) {
-						echo ' &amp; '.ucfirst( $f->format( $n ) ).' staging website';
+						echo ' &amp; '.ucfirst( $f->format( $n ) ).' staging accounts';
 						if( $n > 1 ) { echo 's'; }
 					}
 					
