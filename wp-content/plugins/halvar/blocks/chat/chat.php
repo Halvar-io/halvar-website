@@ -27,7 +27,58 @@ if (! empty($block['align'])) {
 
 if( get_field( 'site_chat', 'option' ) == 'no' ) {
 ?>
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="376c56a7-53fd-4fe5-b9df-0bc489fb6dbc";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<script type="text/javascript">
+
+function creativepulse_getCookie(name) {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? decodeURIComponent(match[2]) : null;
+}
+
+const savedData = creativepulse_getCookie('countryData');
+var country = '';
+const country_deny = [ 
+ 'NG',
+ 'IN'
+ ];
+
+
+if (savedData) {
+  // Parse and log the saved cookie data
+  // console.log('Retrieved from cookie:', JSON.parse(savedData).country);
+  country = JSON.parse(savedData).country;
+} else {
+  // If not found, fetch from API
+  fetch('https://api.country.is/')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // console.log('Fetched from API:', data.country);
+      country = data.country;
+
+      const jsonData = encodeURIComponent(JSON.stringify(data));
+
+      const date = new Date();
+      date.setTime(date.getTime() + (2 * 24 * 60 * 60 * 1000)); // 2 days in milliseconds
+      const expires = "expires=" + date.toUTCString();
+
+      document.cookie = `countryData=${jsonData}; ${expires}; path=/`;
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+    });
+}
+
+
+if( !country_deny.includes( country ) ) {
+
+	window.$crisp=[];window.CRISP_WEBSITE_ID="376c56a7-53fd-4fe5-b9df-0bc489fb6dbc";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+	
+}
+</script>
 <?php
 	return;
 }
