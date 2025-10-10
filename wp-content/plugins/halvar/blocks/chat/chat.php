@@ -38,7 +38,12 @@ const savedData = creativepulse_getCookie('countryData');
 var country = '';
 const country_deny = [ 
  'NG',
- 'IN'
+  'BD',
+ 'IN',
+  'IQ'
+ ];
+const lang_deny = [ 
+ 'en-in'
  ];
 
 
@@ -72,8 +77,9 @@ if (savedData) {
     });
 }
 
+var userLang = navigator.language || navigator.userLanguage;
 
-if( !country_deny.includes( country ) ) {
+if( !country_deny.includes( country ) && !lang_deny.includes( userLang ) ) {
 
 	window.$crisp=[];window.CRISP_WEBSITE_ID="376c56a7-53fd-4fe5-b9df-0bc489fb6dbc";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 	

@@ -28,7 +28,11 @@ if (! empty($block['align'])) {
 }
 
 
-$our_query = new WP_Query( [ 'post_type' => 'post', 'posts_per_page' => 3 ]);
+$our_query = new WP_Query( [ 
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'category_name' => 'front-page',
+     ]);
 ?>
 
 <div

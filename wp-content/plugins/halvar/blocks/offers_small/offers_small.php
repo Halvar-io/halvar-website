@@ -102,7 +102,7 @@ foreach( $t as $item ) {
 
 
 
-		<p>This is where things get serious with 10 sites.</p>
+		<p>This is where things get serious with 5 sites.</p>
 
 
 

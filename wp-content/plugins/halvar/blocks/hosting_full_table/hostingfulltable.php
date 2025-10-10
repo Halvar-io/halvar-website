@@ -219,7 +219,7 @@ if( !$is_server ) {
 
 				<p>200% Green Energy Match</p>
 				
-				<p><strong>PHP 8.0</strong> and up with easy PHP selector</p>		
+				<p><strong>PHP <?php echo get_field ( 'php_mininum_version_we_ship', 'options' ); ?></strong> and up with easy PHP selector</p>		
 				
 <?php 
 if( !$is_server ) {

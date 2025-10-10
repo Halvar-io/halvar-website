@@ -104,6 +104,7 @@ function team_members_shortcode() {
             // Get the subfield values
             $member_image = $team_member['member_image'];
             $member_name = $team_member['member_name'];
+            $member_email = $team_member['member_email'];
             $member_designation = $team_member['member_designation'];
             $member_telephone = $team_member['member_telephone'];            
             $linked_profile_url = $team_member['linked_profile_url'];
@@ -117,7 +118,8 @@ function team_members_shortcode() {
             $output .= '<div class="team-member-name-designtion">';
             $output .= '<h3 class="team-member-name">' . $member_name . '</h3>';
             $output .= '<h3 class="team-member-designation">' . $member_designation . '</h3>';
-            $output .= '<div class="team-member-designation" style="margin-top:-18px !important">' . $member_telephone . '</div>';
+            $output .= '<div class="team-member-designation" style="margin-top:-18px !important">T: ' . $member_telephone .'</div>';
+            $output .= '<div class="team-member-designation" style="margin-top:-6px !important">E: '.$member_email.'</div>';
             $output .= '</div>';
             $output .= '<div class="team-member-profile">';
             $output .= '<a href="' . $linked_profile_url . '" class="team-member-link"><img class="linkedin-logo" src="/wp-content/uploads/2023/07/group-86.png" alt="linkedin-profile"></a>';            
@@ -152,7 +154,7 @@ var _paq = window._paq = window._paq || [];
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
-var u="//matomo01.eu130.codert.cloud/";
+var u="//stats.halvar.io/";
 _paq.push(['setTrackerUrl', u+'matomo.php']);
 _paq.push(['setSiteId', '11']);
 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
