@@ -34,6 +34,14 @@ if (! empty($block['align'])) {
 
 $discount_percentage = get_field( 'percentage_discount' );
 $override_discountcode = get_field( 'override_discountcode' );
+
+$all_fields = get_fields();
+if( !isset( $all_fields['hide_features'] ) ) {
+	$all_fields['hide_features'] = [];
+}
+
+$disc_type = $all_fields['disc_type'] ?? 'NVME';
+
 $t = get_field( 'hostings' );
 $f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 
@@ -138,13 +146,18 @@ foreach( $t as $item ) {
 
 
 				<p>
-					<span style="font-weight: 700;"><?php echo get_field( 'storage', $item ); ?> GB</span> storage <strong>on NVME</strong>
+					<span style="font-weight: 700;"><?php echo get_field( 'storage', $item ); ?> GB</span> storage <strong>on <?php echo $disc_type; ?></strong>
 				</p>
 
 
 
 				<p>
-					<span style="font-weight: 700;">Unmetered</span> Transfer *
+					<?php
+						$n = get_field( 'traffic', $item );
+						if( !$n ) { unset( $n ); } else { $n .= ' GB'; }
+						$traffic = $n ?? 'Unmetered';
+					?>
+					<span style="font-weight: 700;"><?php echo $traffic; ?></span> Transfer *
 				</p>
 
 
@@ -188,8 +201,7 @@ if( !$is_server ) {
 				</p>
 				
 <?php 
-if( !$is_server ) {
-
+if( !$is_server && !in_array( 'WP toolkit', $all_fields['hide_features'] ) ) {
 ?>				
 				<p>
 					<span style="font-weight: 700;">Free </span> WP toolkit
@@ -202,12 +214,16 @@ if( !$is_server ) {
 				</p>				
 				
 <?php 
-if( !$is_server ) {
-
+if( !$is_server && !in_array( 'Accelerate WP', $all_fields['hide_features'] ) ) {
 ?>					
 				<p>
 					<span style="font-weight: 700;">AccelerateWP </span> included
 				</p>				
+
+<?php 
+}
+if( !in_array( 'Databases', $all_fields['hide_features'] ) ) {
+?>					
 
 				<p><?php
 				$n = get_field( 'sites', $item );
