@@ -56,7 +56,7 @@ foreach( $t as $item ) {
     
     	// 2.5 => 2.50
 	if( intval( $discount_percentage ) > 0 ) {
-		$price_discount = $price -  ( ($price/100) * $discount_percentage );
+		$price_discount = round( $price -  ( ($price/100) * $discount_percentage ), 2 );
 		if( substr_count( $price_discount, '.' ) == 1 ) {
 			$t_price = explode( '.', $price_discount );
 			if( strlen( $t_price[1] ) == 1 ) {
@@ -157,7 +157,8 @@ foreach( $t as $item ) {
 						if( !$n ) { unset( $n ); } else { $n .= ' GB'; }
 						$traffic = $n ?? 'Unmetered';
 					?>
-					<span style="font-weight: 700;"><?php echo $traffic; ?></span> Transfer *
+					<span style="font-weight: 700;"><?php echo $traffic; ?></span> Transfer<?php
+					if( $traffic === 'Unmetered' ) { echo ' *'; };?>
 				</p>
 
 
