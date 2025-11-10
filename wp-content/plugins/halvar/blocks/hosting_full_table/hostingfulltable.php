@@ -129,7 +129,7 @@ foreach( $t as $item ) {
 					$n = get_field( 'sites', $item );
 					echo ucfirst( $f->format( $n ) ); ?></span> account<?php if( $n > 1 ) { echo 's'; } 
 					if( $is_server ) {
-						echo ' &amp; '.ucfirst( $f->format( $n ) ).' staging accounts';
+						echo ' &amp; '.ucfirst( $f->format( $n ) ).' staging account';
 						if( $n > 1 ) { echo 's'; }
 					}
 					
@@ -177,7 +177,7 @@ if( !$is_server ) {
 <?php 
 }
 
-if( !$is_reseller && !$is_server ) {
+if( !$is_reseller && !$is_server && !in_array( 'Domain', $all_fields['hide_features'] ) ) {
 ?>		
 				<p>
 					<span style="font-weight: 700;">Free</span> Domain for the 1st Year
