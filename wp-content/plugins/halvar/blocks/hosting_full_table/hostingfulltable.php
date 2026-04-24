@@ -150,6 +150,17 @@ foreach( $t as $item ) {
 				</p>
 
 
+<?php 
+if( !$is_server ) {
+
+?>
+				<p>
+					<span style="font-weight: 700;">Standard price <small>&euro; <?php echo $price; ?> /mo</small>
+				</p>
+
+<?php 
+}
+?>
 
 				<p>
 					<?php
@@ -166,17 +177,9 @@ foreach( $t as $item ) {
 					<span style="font-weight: 700;">Free TLS </span> Certificate
 				</p>
 
-<?php 
-if( !$is_server ) {
 
-?>
-				<p>
-					<span style="font-weight: 700;">Standard price <small>&euro; <?php echo $price; ?> /mo</small>
-				</p>
 
-<?php 
-}
-
+<?
 if( !$is_reseller && !$is_server && !in_array( 'Domain', $all_fields['hide_features'] ) ) {
 ?>		
 				<p>
