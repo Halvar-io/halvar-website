@@ -124,6 +124,18 @@ foreach( $t as $item ) {
 			<div
 				class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
 
+<?php 
+if( !$is_server ) {
+
+?>
+				<p>
+					<span style="font-weight: 700;">Standard price <small>&euro; <?php echo $price; ?> /mo</small>
+				</p>
+
+<?php 
+}
+?>
+
 				<p>
 					<span style="font-weight: 700;"><?php 
 					$n = get_field( 'sites', $item );
@@ -149,18 +161,6 @@ foreach( $t as $item ) {
 					<span style="font-weight: 700;"><?php echo get_field( 'storage', $item ); ?> GB</span> storage <strong>on <?php echo $disc_type; ?></strong>
 				</p>
 
-
-<?php 
-if( !$is_server ) {
-
-?>
-				<p>
-					<span style="font-weight: 700;">Standard price <small>&euro; <?php echo $price; ?> /mo</small>
-				</p>
-
-<?php 
-}
-?>
 
 				<p>
 					<?php
