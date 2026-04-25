@@ -260,7 +260,7 @@ if( !$is_server ) {
 				<p>30-Day Money-Back Guarantee</p>
 				
 				<p>
-					<span style="font-weight: 700;">Developer friendly</span> composer, git, ssh, rsync, cron,
+					<span style="font-weight: 700;">Developer friendly</span> composer, git, ssh, rsync, redis, cron,
 					<?php
 					if( !in_array( 'WP toolkit', $all_fields['hide_features'] ) ) {
 						echo 'wp-cli, ';
