@@ -139,11 +139,18 @@ if( !$is_server ) {
 				<p>
 					<span style="font-weight: 700;"><?php 
 					$n = get_field( 'sites', $item );
-					echo ucfirst( $f->format( $n ) ); ?></span> account<?php if( $n > 1 ) { echo 's'; } 
-					if( $is_server ) {
-						echo ' &amp; '.ucfirst( $f->format( $n ) ).' staging account';
-						if( $n > 1 ) { echo 's'; }
+					
+					if( $is_reseller ) {
+						echo ucfirst( $f->format( $n ) ); ?></span> account<?php if( $n > 1 ) { echo 's'; } 
+						if( $is_server ) {
+							echo ' &amp; '.ucfirst( $f->format( $n ) ).' staging account';
+							if( $n > 1 ) { echo 's'; }
+						}
+					} else {
+						echo ucfirst( $f->format( $n ) ); ?></span> site<?php if( $n > 1 ) { echo 's'; }
+						echo ' on one account.';
 					}
+					
 					
 					?>
 				</p>
